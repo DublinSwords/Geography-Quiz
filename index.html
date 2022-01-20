@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-csale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
         <!-- font awesome & google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,10 +14,10 @@
         <title>Geography-Quiz</title>
     </head>
     <body>
-        <h1 class="heading">
-            <i class="fas fa-globe"></i> Love Geography
-        </h1>
         <div class="container">
+            <h1 class="heading">
+                <i class="fas fa-globe"></i> Love Geography
+            </h1>
             <div id="question-container" class="hide">
                 <div id="question">Question</div>
                 <div id="answer-buttons" class="btn-grid">
@@ -26,14 +27,14 @@
                     <button class="btn">Answer 4</button>
                 </div>
             </div>
-        </div>
-        <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
-            <button id="next-btn" class="next-btn btn hide">Next</button>
-        </div>
-        <div class="score-area">
-            <p class="scores">Correct Answers <span id="score">0</span></p>
-            <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
+            <div class="controls">
+                <button id="start-btn" class="start-btn btn">Start</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
+            </div>
+            <div class="score-area">
+                <p class="scores">Correct Answers <span id="score">0</span></p>
+                <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
+            </div>
         </div>
         <!--font awesome link copied from Broadmeadow project-->
         <script src="https://kit.fontawesome.com/e944bd0a85.js" crossorigin="anonymous"></script>
