@@ -38,3 +38,18 @@ body {
 .btn:hover{
     background-color: lightgreen;
 }
+
+.start-btn, .next-btn {
+    font-size: 1rem;
+    font-weight: lighter;
+    padding: 10px 20px;
+    gap: 15px;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hide {
+    display: none;
+}
