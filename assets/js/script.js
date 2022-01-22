@@ -96,21 +96,21 @@ const questions = [
         ]
     },
     {
-        question: 'What is the capital of Iceland?',
+        question: 'Which is the highest mountain in the world?',
         answers: [
-            { text: 'Reykjavík', correct: true },
-            { text: 'Stockholm', correct: false},
-            { text: 'Oslo', correct: false},
-            { text: 'Copenhagen', correct: false}
+            { text: 'Everest', correct: true },
+            { text: 'K2', correct: false},
+            { text: 'Kangchenjunga', correct: false},
+            { text: 'Lhotse', correct: false}
         ]
     },
     {
-        question: 'What is the capital of Iceland?',
+        question: 'What is the largest ocean basin on Earth?',
         answers: [
-            { text: 'Reykjavík', correct: true },
-            { text: 'Stockholm', correct: false},
-            { text: 'Oslo', correct: false},
-            { text: 'Copenhagen', correct: false}
+            { text: 'Pacific Ocean', correct: true },
+            { text: 'Atlantic Ocean', correct: false},
+            { text: 'Indian Ocean', correct: false},
+            { text: 'Southern Ocean', correct: false}
         ]
     },
     {
