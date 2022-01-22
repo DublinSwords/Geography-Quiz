@@ -53,7 +53,13 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
-    nextButton.classList.remove('hide')
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove('hide')
+    } else {
+       startButton.innerText = 'Restart'
+       startButton.classList.remove('hide')
+    }
+    
 }
 
 function setStatusClass(element, correct) {
@@ -79,5 +85,105 @@ const questions = [
             { text: 'Oslo', correct: false},
             { text: 'Copenhagen', correct: false}
         ]
-    }
+    },
+    {
+        question: 'Which is the longest river in the World?',
+        answers: [
+            { text: 'Nile', correct: true },
+            { text: 'Amazon', correct: false},
+            { text: 'Yangtze', correct: false},
+            { text: 'Mississippi-Missouri', correct: false}
+        ]
+    },
+    {
+        question: 'What is the capital of Iceland?',
+        answers: [
+            { text: 'Reykjavík', correct: true },
+            { text: 'Stockholm', correct: false},
+            { text: 'Oslo', correct: false},
+            { text: 'Copenhagen', correct: false}
+        ]
+    },
+    {
+        question: 'What is the capital of Iceland?',
+        answers: [
+            { text: 'Reykjavík', correct: true },
+            { text: 'Stockholm', correct: false},
+            { text: 'Oslo', correct: false},
+            { text: 'Copenhagen', correct: false}
+        ]
+    },
+    {
+        question: 'What is the capital of Iceland?',
+        answers: [
+            { text: 'Reykjavík', correct: true },
+            { text: 'Stockholm', correct: false},
+            { text: 'Oslo', correct: false},
+            { text: 'Copenhagen', correct: false}
+        ]
+    },
+    {
+        question: 'What is the capital of Iceland?',
+        answers: [
+            { text: 'Reykjavík', correct: true },
+            { text: 'Stockholm', correct: false},
+            { text: 'Oslo', correct: false},
+            { text: 'Copenhagen', correct: false}
+        ]
+    },
+    {
+        question: 'What is the capital of Iceland?',
+        answers: [
+            { text: 'Reykjavík', correct: true },
+            { text: 'Stockholm', correct: false},
+            { text: 'Oslo', correct: false},
+            { text: 'Copenhagen', correct: false}
+        ]
+    },
+    {
+        question: 'What is the capital of Iceland?',
+        answers: [
+            { text: 'Reykjavík', correct: true },
+            { text: 'Stockholm', correct: false},
+            { text: 'Oslo', correct: false},
+            { text: 'Copenhagen', correct: false}
+        ]
+    },
+    {
+        question: 'What is the capital of Iceland?',
+        answers: [
+            { text: 'Reykjavík', correct: true },
+            { text: 'Stockholm', correct: false},
+            { text: 'Oslo', correct: false},
+            { text: 'Copenhagen', correct: false}
+        ]
+    },
+    {
+        question: 'What is the capital of Iceland?',
+        answers: [
+            { text: 'Reykjavík', correct: true },
+            { text: 'Stockholm', correct: false},
+            { text: 'Oslo', correct: false},
+            { text: 'Copenhagen', correct: false}
+        ]
+    },
+    {
+        question: 'What is the capital of Iceland?',
+        answers: [
+            { text: 'Reykjavík', correct: true },
+            { text: 'Stockholm', correct: false},
+            { text: 'Oslo', correct: false},
+            { text: 'Copenhagen', correct: false}
+        ]
+    },
+    {
+        question: 'What is the capital of Iceland?',
+        answers: [
+            { text: 'Reykjavík', correct: true },
+            { text: 'Stockholm', correct: false},
+            { text: 'Oslo', correct: false},
+            { text: 'Copenhagen', correct: false}
+        ]
+    },
+
 ]
