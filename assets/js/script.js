@@ -1,5 +1,6 @@
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
+const exitButton = document.getElementById('exit-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
@@ -58,6 +59,9 @@ function selectAnswer(e) {
     } else {
        startButton.innerText = 'Restart'
        startButton.classList.remove('hide')
+       exitButton.innerText = 'Exit'
+       exitButton.classList.remove('hide')
+
     }
     
 }
@@ -89,100 +93,100 @@ const questions = [
     {
         question: 'Which is the longest river in the World?',
         answers: [
-            { text: 'Nile', correct: true },
-            { text: 'Amazon', correct: false},
+            { text: 'Amazon', correct: false },
+            { text: 'Nile', correct: true},
             { text: 'Yangtze', correct: false},
             { text: 'Mississippi-Missouri', correct: false}
         ]
     },
     {
-        question: 'Which is the highest mountain in the world?',
+        question: 'Which is the highest mountain in the World?',
         answers: [
-            { text: 'Everest', correct: true },
-            { text: 'K2', correct: false},
             { text: 'Kangchenjunga', correct: false},
+            { text: 'K2', correct: false},
+            { text: 'Everest', correct: true},
             { text: 'Lhotse', correct: false}
         ]
     },
     {
         question: 'What is the largest ocean basin on Earth?',
         answers: [
-            { text: 'Pacific Ocean', correct: true },
+            { text: 'Southern Ocean', correct: false },
             { text: 'Atlantic Ocean', correct: false},
             { text: 'Indian Ocean', correct: false},
-            { text: 'Southern Ocean', correct: false}
+            { text: 'Pacific Ocean', correct: true}
         ]
     },
     {
-        question: 'What is the capital of Iceland?',
+        question: 'Which is the capital of Austria?',
         answers: [
-            { text: 'Reykjavík', correct: true },
-            { text: 'Stockholm', correct: false},
+            { text: 'Vienna', correct: true },
+            { text: 'Berlin', correct: false},
             { text: 'Oslo', correct: false},
-            { text: 'Copenhagen', correct: false}
+            { text: 'London', correct: false}
         ]
     },
     {
-        question: 'What is the capital of Iceland?',
+        question: 'Which is the worlds largest forest?',
         answers: [
-            { text: 'Reykjavík', correct: true },
-            { text: 'Stockholm', correct: false},
-            { text: 'Oslo', correct: false},
-            { text: 'Copenhagen', correct: false}
+            { text: 'Congo Basin', correct: false },
+            { text: 'Amazon rainforest', correct: true },
+            { text: 'New Guinea rainforest', correct: false},
+            { text: 'Sundaland rainforest', correct: false}
         ]
     },
     {
-        question: 'What is the capital of Iceland?',
+        question: 'Which is longest river of Europe?',
         answers: [
-            { text: 'Reykjavík', correct: true },
-            { text: 'Stockholm', correct: false},
-            { text: 'Oslo', correct: false},
-            { text: 'Copenhagen', correct: false}
+            { text: 'Ural', correct: false },
+            { text: 'Danube', correct: false},
+            { text: 'Volga', correct: true },
+            { text: 'Dnieper', correct: false}
         ]
     },
     {
-        question: 'What is the capital of Iceland?',
+        question: 'What is the capital of Denmark?',
         answers: [
-            { text: 'Reykjavík', correct: true },
+            { text: 'Reykjavík', correct: false },
             { text: 'Stockholm', correct: false},
             { text: 'Oslo', correct: false},
-            { text: 'Copenhagen', correct: false}
+            { text: 'Copenhagen', correct: true }
         ]
     },
     {
-        question: 'What is the capital of Iceland?',
+        question: 'Which is the 2 smallest country in the world?',
         answers: [
-            { text: 'Reykjavík', correct: true },
-            { text: 'Stockholm', correct: false},
-            { text: 'Oslo', correct: false},
-            { text: 'Copenhagen', correct: false}
+            { text: 'Monaco', correct: true },
+            { text: 'Vatican City', correct: false},
+            { text: 'Nauru', correct: false},
+            { text: 'Tuvalu', correct: false}
         ]
     },
     {
-        question: 'What is the capital of Iceland?',
+        question: 'Which is the biggest country in the World?',
         answers: [
-            { text: 'Reykjavík', correct: true },
-            { text: 'Stockholm', correct: false},
-            { text: 'Oslo', correct: false},
-            { text: 'Copenhagen', correct: false}
+            { text: 'Canada', correct: false },
+            { text: 'Russia', correct: true},
+            { text: 'China', correct: false},
+            { text: 'United States', correct: false}
         ]
     },
     {
-        question: 'What is the capital of Iceland?',
+        question: 'What is deepest lake in the World?',
         answers: [
-            { text: 'Reykjavík', correct: true },
-            { text: 'Stockholm', correct: false},
-            { text: 'Oslo', correct: false},
-            { text: 'Copenhagen', correct: false}
+            { text: 'Lake Bunyonyi', correct: false },
+            { text: 'Tanganyika', correct: false},
+            { text: 'Baikal', correct: true },
+            { text: 'Caspian Sea', correct: false}
         ]
     },
     {
-        question: 'What is the capital of Iceland?',
+        question: 'What is the biggest state in the United States by size?',
         answers: [
-            { text: 'Reykjavík', correct: true },
-            { text: 'Stockholm', correct: false},
-            { text: 'Oslo', correct: false},
-            { text: 'Copenhagen', correct: false}
+            { text: 'Montana', correct: false },
+            { text: 'Texas ', correct: false},
+            { text: 'California', correct: false},
+            { text: 'Alaska', correct: true}
         ]
     },
 

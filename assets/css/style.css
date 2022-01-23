@@ -2,7 +2,14 @@
     box-sizing: border-box;
     
 }
+
+:root {
+   --hue-neutral: 200;
+   --hue-wrong: 0;
+   --hue-correct: 145;
+}
 body {
+    --hue: var(--hue-neutral);
     padding: 0;
     margin: 0;
     display: flex;
@@ -10,7 +17,14 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: grey;
+    background-color: hsl(var(--hue), 100%, 20%);
+}
+
+body.correct{
+    --hue: var(--hue-correct);
+}
+body.wrong {
+    --hue: var(--hue-wrong);
 }
 
 .container {
@@ -22,6 +36,10 @@ body {
     box-shadow: 0 0 10px 2px;
 }
 
+.container.heading{
+    align-items: center;
+}
+
 .btn-grid {
     display: grid;
     grid-template-columns: repeat(2,auto);
@@ -29,20 +47,31 @@ body {
     margin: 30px 0;
 }
 .btn {
+    --hue: var(--hue-neutral);
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 50%);
     border-radius: 5px;
     padding: ppx 10px;
     outline: none;
-    color: black;
-    background-color: lightblue;
+    color: white;
 }
 .btn:hover{
-    background-color: lightgreen;
+    border-color: darkblue;
 }
 
-.start-btn, .next-btn {
+.btn.correct {
+   --hue: var(--hue-correct);
+   color: black;
+}
+
+.btn.wrong {
+   --hue: var(--hue-wrong);
+}
+
+.start-btn, .next-btn, .exit-btn {
     font-size: 1rem;
     font-weight: lighter;
-    padding: 10px 20px;
+    padding: 20px 40px;
     gap: 15px;
 }
 .controls {
@@ -50,6 +79,15 @@ body {
     justify-content: center;
     align-items: center;
 }
+.score-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 .hide {
     display: none; 
+}
+.instruction{
+    display: none;
 }
