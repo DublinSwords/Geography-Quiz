@@ -12,6 +12,7 @@ nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
+exitButton.addEventListener('click', exitGame)
 
 function startGame() {
      startButton.classList.add('hide')
@@ -41,6 +42,7 @@ function showQuestion(question){
 }
 
 function resetState() {
+    clearStatusClass(document.body)
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
@@ -78,6 +80,11 @@ function setStatusClass(element, correct) {
 function clearStatusClass(element){
     element.classList.remove('correct')
     element.classList.remove('wrong')
+}
+
+function exitGame() {
+    startButton.addEventListener('click', startGame)
+    questionContainerElement.classList.add('hide')
 }
 
 const questions = [
