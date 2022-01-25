@@ -4,6 +4,7 @@ const exitButton = document.getElementById('exit-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+const instructionElement = document.getElementById('instruction')
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -20,6 +21,7 @@ function startGame() {
      currentQuestionIndex = 0
      questionContainerElement.classList.remove('hide')
      setNextQuestion()
+     instructionElement.classList.add('hide')
      
 }
 function setNextQuestion() {
@@ -44,6 +46,7 @@ function showQuestion(question){
 function resetState() {
     clearStatusClass(document.body)
     nextButton.classList.add('hide')
+    exitButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
@@ -85,6 +88,7 @@ function clearStatusClass(element){
 function exitGame() {
     startButton.addEventListener('click', startGame)
     questionContainerElement.classList.add('hide')
+    exitButton.classList.add('hide')
 }
 
 const questions = [
