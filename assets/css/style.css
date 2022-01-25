@@ -1,3 +1,4 @@
+/*adopted code from WEB Dev Simplified*/
 *, *::before, *::after {
     box-sizing: border-box;
     
@@ -88,6 +89,4 @@ body.wrong {
 .hide {
     display: none; 
 }
-.instruction{
-    display: none;
-}
+
