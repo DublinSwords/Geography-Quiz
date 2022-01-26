@@ -70,6 +70,17 @@ function selectAnswer(e) {
     }
     
 }
+/**
+ * Gets current score from the DOM and increments by 1 
+ */
+function incrementScore() {
+      let oldScore = parceInt(document.getElementById("score").innerText);
+      document.getElementById("score").innerText = oldScore+1;
+}
+
+function incrementWrongAnswer() {
+
+}
 
 function setStatusClass(element, correct) {
     clearStatusClass(element)
@@ -147,7 +158,7 @@ const questions = [
         ]
     },
     {
-        question: 'Which is longest river of Europe?',
+        question: 'Which is the longest river in Europe?',
         answers: [
             { text: 'Ural', correct: false },
             { text: 'Danube', correct: false},
@@ -165,7 +176,7 @@ const questions = [
         ]
     },
     {
-        question: 'Which is the 2 smallest country in the world?',
+        question: 'Which is the 2 smallest country in the World?',
         answers: [
             { text: 'Monaco', correct: true },
             { text: 'Vatican City', correct: false},
@@ -183,7 +194,7 @@ const questions = [
         ]
     },
     {
-        question: 'What is deepest lake in the World?',
+        question: 'What is the deepest lake in the World?',
         answers: [
             { text: 'Lake Bunyonyi', correct: false },
             { text: 'Tanganyika', correct: false},
