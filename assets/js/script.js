@@ -66,7 +66,6 @@ function selectAnswer(e) {
        startButton.classList.remove('hide')
        exitButton.innerText = 'Exit'
        exitButton.classList.remove('hide')
-
     }
     
 }
@@ -75,11 +74,14 @@ function selectAnswer(e) {
  */
 function incrementScore() {
       let oldScore = parceInt(document.getElementById("score").innerText);
-      document.getElementById("score").innerText = oldScore+1;
+      document.getElementById("score").innerText = ++oldScore;
 }
-
+/**
+ * Gets current tally of incorrect answers score from the DOM and increments by 1 
+ */
 function incrementWrongAnswer() {
-
+    let oldScore = parceInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").innerText = ++oldScore;
 }
 
 function setStatusClass(element, correct) {
