@@ -5,6 +5,7 @@ const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const instructionElement = document.getElementById('instruction')
+const scoreElement = document.getElementById('score')
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -13,7 +14,7 @@ nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
-exitButton.addEventListener('click', exitGame)
+exitButton.addEventListener('click', exitGame) 
 
 function startGame() {
      startButton.classList.add('hide')
@@ -22,6 +23,7 @@ function startGame() {
      questionContainerElement.classList.remove('hide')
      setNextQuestion()
      instructionElement.classList.add('hide')
+     resetScore ()
      
 }
 function setNextQuestion() {
@@ -55,6 +57,11 @@ function resetState() {
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
+    if(correct){
+        incrementScore()
+    }else {
+        incrementWrongAnswer() 
+    }
     setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
@@ -73,14 +80,14 @@ function selectAnswer(e) {
  * Gets current score from the DOM and increments by 1 
  */
 function incrementScore() {
-      let oldScore = parceInt(document.getElementById("score").innerText);
+      let oldScore = parseInt(document.getElementById("score").innerText);
       document.getElementById("score").innerText = ++oldScore;
 }
 /**
  * Gets current tally of incorrect answers score from the DOM and increments by 1 
  */
 function incrementWrongAnswer() {
-    let oldScore = parceInt(document.getElementById("incorrect").innerText);
+    let oldScore = parseInt(document.getElementById("incorrect").innerText);
     document.getElementById("incorrect").innerText = ++oldScore;
 }
 
@@ -102,6 +109,11 @@ function exitGame() {
     startButton.addEventListener('click', startGame)
     questionContainerElement.classList.add('hide')
     exitButton.classList.add('hide')
+}
+
+function resetScore (){
+    document.getElementById("score").innerText = "0";
+    document.getElementById("incorrect").innerText ="0";
 }
 
 const questions = [
