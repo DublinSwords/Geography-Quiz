@@ -53,6 +53,9 @@ function resetState() {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
 }
+/**
+ * selectAnswer function with incrementScore and incrementWrongAnswer
+ */
 
 function selectAnswer(e) {
     const selectedButton = e.target
@@ -77,14 +80,14 @@ function selectAnswer(e) {
     
 }
 /**
- * Gets current score from the DOM and increments by 1 
+ * Gets current score from the DOM and increments by 1 adopted from Love Math project Code Institute
  */
 function incrementScore() {
       let oldScore = parseInt(document.getElementById("score").innerText);
       document.getElementById("score").innerText = ++oldScore;
 }
 /**
- * Gets current tally of incorrect answers score from the DOM and increments by 1 
+ * Gets current tally of incorrect answers score from the DOM and increments by 1 adopted from Love Math project Code Institute
  */
 function incrementWrongAnswer() {
     let oldScore = parseInt(document.getElementById("incorrect").innerText);
@@ -104,12 +107,17 @@ function clearStatusClass(element){
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
-
+/**
+ * exitGame function to exit game when you prees exit game 
+ */
 function exitGame() {
     startButton.addEventListener('click', startGame)
     questionContainerElement.classList.add('hide')
     exitButton.classList.add('hide')
 }
+/** 
+ * resetScore function to reset to scores 
+*/
 
 function resetScore (){
     document.getElementById("score").innerText = "0";
