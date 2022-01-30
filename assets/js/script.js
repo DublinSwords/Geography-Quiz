@@ -123,7 +123,9 @@ function resetScore (){
     document.getElementById("score").innerText = "0";
     document.getElementById("incorrect").innerText ="0";
 }
-
+/**
+ * questions 
+ */
 const questions = [
     {
         question: 'What is the capital of Iceland?',
