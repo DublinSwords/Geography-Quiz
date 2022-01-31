@@ -1,3 +1,4 @@
+/*adopted code from WEB Dev Simplified*/
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const exitButton = document.getElementById('exit-btn')
@@ -114,6 +115,7 @@ function exitGame() {
     startButton.addEventListener('click', startGame)
     questionContainerElement.classList.add('hide')
     exitButton.classList.add('hide')
+    instructionElement.classList.remove('hide')
 }
 /** 
  * resetScore function to reset to scores 
