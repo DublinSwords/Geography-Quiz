@@ -5,9 +5,14 @@ const exitButton = document.getElementById('exit-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+/**
+ * my code
+ */
 const instructionElement = document.getElementById('instruction')
 const scoreElement = document.getElementById('score')
-
+/**
+ * adopted from WEB Dev Simplified
+ */
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
@@ -15,8 +20,13 @@ nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
+/**
+ * my code
+ */
 exitButton.addEventListener('click', exitGame) 
-
+/**
+ * adopted from WEB Dev Simplified
+ */
 function startGame() {
      startButton.classList.add('hide')
      shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -109,16 +119,17 @@ function clearStatusClass(element){
     element.classList.remove('wrong')
 }
 /**
- * exitGame function to exit game when you prees exit game 
+ * my code exitGame function to exit game when you prees exit game 
  */
 function exitGame() {
     startButton.addEventListener('click', startGame)
+    startButton.innerText = 'Start'
     questionContainerElement.classList.add('hide')
     exitButton.classList.add('hide')
     instructionElement.classList.remove('hide')
 }
 /** 
- * resetScore function to reset to scores 
+ * my code resetScore function to reset to scores 
 */
 
 function resetScore (){
@@ -126,7 +137,7 @@ function resetScore (){
     document.getElementById("incorrect").innerText ="0";
 }
 /**
- * questions 
+ * my questions 
  */
 const questions = [
     {
