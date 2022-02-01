@@ -84,7 +84,7 @@ function selectAnswer(e) {
         nextButton.classList.remove('hide');
     } else {
        startButton.innerText = 'Restart';
-       startButton.classList.remove('hide');
+       startButton.classList.remove('hide');       
        exitButton.innerText = 'Exit';
        exitButton.classList.remove('hide');
     }
@@ -213,7 +213,7 @@ const questions = [
         ]
     },
     {
-        question: 'Which is the 2 smallest country in the World?',
+        question: 'Which is the 2nd smallest country in the World?',
         answers: [
             { text: 'Monaco', correct: true },
             { text: 'Vatican City', correct: false},
