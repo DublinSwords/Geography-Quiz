@@ -1,67 +1,67 @@
 /*adopted code from WEB Dev Simplified*/
-const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementById('next-btn')
+const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
 const exitButton = document.getElementById('exit-btn')
-const questionContainerElement = document.getElementById('question-container')
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
+const questionContainerElement = document.getElementById('question-container');
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-buttons');
 /**
  * my code
  */
-const instructionElement = document.getElementById('instruction')
-const scoreElement = document.getElementById('score')
+const instructionElement = document.getElementById('instruction');
+const scoreElement = document.getElementById('score');
 /**
  * adopted from WEB Dev Simplified
  */
-let shuffledQuestions, currentQuestionIndex
+let shuffledQuestions, currentQuestionIndex;
 
-startButton.addEventListener('click', startGame)
+startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
-    currentQuestionIndex++
-    setNextQuestion()
-})
+    currentQuestionIndex++;
+    setNextQuestion();
+});
 /**
  * my code
  */
-exitButton.addEventListener('click', exitGame) 
+exitButton.addEventListener('click', exitGame); 
 /**
  * adopted from WEB Dev Simplified
  */
 function startGame() {
-     startButton.classList.add('hide')
-     shuffledQuestions = questions.sort(() => Math.random() - .5)
-     currentQuestionIndex = 0
-     questionContainerElement.classList.remove('hide')
-     setNextQuestion()
-     instructionElement.classList.add('hide')
-     resetScore ()
+     startButton.classList.add('hide');
+     shuffledQuestions = questions.sort(() => Math.random() - .5);
+     currentQuestionIndex = 0;
+     questionContainerElement.classList.remove('hide');
+     setNextQuestion();
+     instructionElement.classList.add('hide');
+     resetScore ();
      
 }
 function setNextQuestion() {
-     resetState()
-     showQuestion(shuffledQuestions[currentQuestionIndex])
+     resetState();
+     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
 function showQuestion(question){
-     questionElement.innerText = question.question
+     questionElement.innerText = question.question;
      question.answers.forEach(answer =>{
-         const button = document.createElement('button')
-         button.innerText = answer.text
-         button.classList.add('btn')
+         const button = document.createElement('button');
+         button.innerText = answer.text;
+         button.classList.add('btn');
          if (answer.correct) {
-             button.dataset.correct = answer.correct
+             button.dataset.correct = answer.correct;
          }
-         button.addEventListener('click',selectAnswer)
-         answerButtonsElement.appendChild(button)
-     })
+         button.addEventListener('click',selectAnswer);
+         answerButtonsElement.appendChild(button);
+     });
 }
 
 function resetState() {
-    clearStatusClass(document.body)
-    nextButton.classList.add('hide')
-    exitButton.classList.add('hide')
+    clearStatusClass(document.body);
+    nextButton.classList.add('hide');
+    exitButton.classList.add('hide');
     while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
 }
 /**
@@ -69,24 +69,24 @@ function resetState() {
  */
 
 function selectAnswer(e) {
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct;
     if(correct){
-        incrementScore()
+        incrementScore();
     }else {
-        incrementWrongAnswer() 
+        incrementWrongAnswer() ;
     }
-    setStatusClass(document.body, correct)
+    setStatusClass(document.body, correct);
     Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
+        setStatusClass(button, button.dataset.correct);
+    });
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide')
+        nextButton.classList.remove('hide');
     } else {
-       startButton.innerText = 'Restart'
-       startButton.classList.remove('hide')
-       exitButton.innerText = 'Exit'
-       exitButton.classList.remove('hide')
+       startButton.innerText = 'Restart';
+       startButton.classList.remove('hide');
+       exitButton.innerText = 'Exit';
+       exitButton.classList.remove('hide');
     }
     
 }
@@ -106,27 +106,27 @@ function incrementWrongAnswer() {
 }
 
 function setStatusClass(element, correct) {
-    clearStatusClass(element)
+    clearStatusClass(element);
     if (correct){
-        element.classList.add('correct')
+        element.classList.add('correct');
     } else {
-        element.classList.add('wrong')
+        element.classList.add('wrong');
     }
 }
 
 function clearStatusClass(element){
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
 }
 /**
  * my code exitGame function to exit game when you prees exit game 
  */
 function exitGame() {
-    startButton.addEventListener('click', startGame)
-    startButton.innerText = 'Start'
-    questionContainerElement.classList.add('hide')
-    exitButton.classList.add('hide')
-    instructionElement.classList.remove('hide')
+    startButton.addEventListener('click', startGame);
+    startButton.innerText = 'Start';
+    questionContainerElement.classList.add('hide');
+    exitButton.classList.add('hide');
+    instructionElement.classList.remove('hide');
 }
 /** 
  * my code resetScore function to reset to scores 
@@ -249,4 +249,4 @@ const questions = [
         ]
     },
 
-]
+];

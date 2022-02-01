@@ -52,7 +52,7 @@ body.wrong {
     border: 1px solid hsl(var(--hue), 100%, 30%);
     background-color: hsl(var(--hue), 100%, 50%);
     border-radius: 5px;
-    padding: ppx 10px;
+    padding: 5px 10px;
     outline: none;
     color: white;
 }
